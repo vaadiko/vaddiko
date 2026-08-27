@@ -1,0 +1,14 @@
+{
+  "name": "vaadplus-functions",
+  "description": "Google Play Billing verification for VaadPlus",
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0",
+    "googleapis": "^140.0.0"
+  },
+  "private": true
+}
