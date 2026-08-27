@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.vaadplus.app",
+      "sha256_cert_fingerprints": ["2F:23:81:A4:EA:BE:D6:96:F3:A0:E3:3F:DB:3F:06:FA:5A:DC:EC:39:1A:B4:FD:67:57:43:C3:A4:05:52:09:DC"]
+    }
+  }
+]
