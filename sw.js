@@ -1,13 +1,13 @@
-const CACHE_NAME = 'vaad-bait-plus-v2';
+const CACHE_NAME = 'vaadiko-v1';
 const ASSETS = [
-  '/vaadplus/',
-  '/vaadplus/index.html',
-  '/vaadplus/manifest.json',
-  '/vaadplus/icon-192.png',
-  '/vaadplus/icon-512.png'
+  '/vaadiko/',
+  '/vaadiko/index.html',
+  '/vaadiko/manifest.json',
+  '/vaadiko/icon-192.png',
+  '/vaadiko/icon-512.png'
 ];
 
-// Install — cache all assets11
+// Install — cache all assets
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
@@ -55,7 +55,7 @@ self.addEventListener('fetch', e => {
       }).catch(() => {
         // Offline fallback — return main page
         if (e.request.mode === 'navigate') {
-          return caches.match('/vaadplus/index.html');
+          return caches.match('/vaadiko/index.html');
         }
       });
     })
@@ -70,9 +70,9 @@ self.addEventListener('sync', e => {
 // Push notifications placeholder (improves PWABuilder score)
 self.addEventListener('push', e => {
   const data = e.data ? e.data.json() : {};
-  self.registration.showNotification(data.title || 'ועד בית פלוס', {
+  self.registration.showNotification(data.title || 'ועדיקו', {
     body: data.body || '',
-    icon: '/vaadplus/icon-192.png',
-    badge: '/vaadplus/icon-192.png'
+    icon: '/vaadiko/icon-192.png',
+    badge: '/vaadiko/icon-192.png'
   });
 });

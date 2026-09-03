@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#1A56DB"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-title" content="ועד בית פלוס"/>
-  <title>ועד בית פלוס</title>
+  <meta name="apple-mobile-web-app-title" content="ועדיקו"/>
+  <title>ועדיקו</title>
   <link rel="manifest" href="./manifest.json"/>
   <link rel="icon" href="./icon-192.png"/>
   <link rel="apple-touch-icon" href="./icon-192.png"/>
@@ -1854,7 +1854,7 @@
       <div style="font-size:12px;color:#9CA3AF;text-align:center;margin-bottom:16px;">תאריך עדכון אחרון: 2.7.2026</div>
 
       <div style="margin-bottom:14px;line-height:1.8;">
-        אפליקציית ועד בית פלוס פותחה כדי לסייע לדיירים וחברי ועד בית לנהל את הבניין המשותף בצורה יעילה. אנו מכבדים את פרטיותך ומחויבים להגן עליה. מסמך זה מפרט כיצד אנו אוספים, משתמשים ושומרים את המידע שלך.
+        אפליקציית ועדיקו פותחה כדי לסייע לדיירים וחברי ועד בית לנהל את הבניין המשותף בצורה יעילה. אנו מכבדים את פרטיותך ומחויבים להגן עליה. מסמך זה מפרט כיצד אנו אוספים, משתמשים ושומרים את המידע שלך.
       </div>
 
       <div style="font-size:15px;font-weight:700;color:#1A56DB;margin-bottom:8px;">1. איסוף מידע</div>
@@ -1904,7 +1904,7 @@
 
       <div style="background:#EBF2FF;border-radius:12px;padding:14px;text-align:center;margin-top:8px;">
         <div style="font-size:12px;color:#4B5563;margin-bottom:4px;">לפניות בנושא פרטיות:</div>
-        <a href="mailto:vaadplus100@gmail.com" style="font-size:15px;font-weight:700;color:#1A56DB;text-decoration:none;">vaadplus100@gmail.com</a>
+        <a href="mailto:vaadiko100@gmail.com" style="font-size:15px;font-weight:700;color:#1A56DB;text-decoration:none;">vaadiko100@gmail.com</a>
       </div>
 
     </div>
@@ -1937,7 +1937,7 @@
       <div style="font-size:13px;color:var(--gray-400);margin-bottom:10px;">
         רכישה בתוך האפליקציה זמינה רק בגרסה מ-Google Play. בינתיים אפשר ליצור קשר:
       </div>
-      <a href="mailto:vaadplus100@gmail.com" style="display:block;background:var(--blue);color:white;border-radius:var(--radius);padding:14px;font-size:15px;font-weight:700;text-decoration:none;margin-bottom:10px;">
+      <a href="mailto:vaadiko100@gmail.com" style="display:block;background:var(--blue);color:white;border-radius:var(--radius);padding:14px;font-size:15px;font-weight:700;text-decoration:none;margin-bottom:10px;">
         📧 צור קשר לשדרוג
       </a>
     </div>
@@ -2046,16 +2046,13 @@ import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, deleteObjec
 
   
 const firebaseConfig = {
-  apiKey: "AIzaSyBUGF8SWdjPg0NSwOlapu_vYnx740fQy9s",
-  authDomain: "vaadplus-c0cc1.firebaseapp.com",
-  projectId: "vaadplus-c0cc1",
-  storageBucket: "vaadplus-c0cc1.firebasestorage.app",
-  messagingSenderId: "369349440346",
-  appId: "1:369349440346:web:4aa1d03e44f9ffa46b7963",
-  measurementId: "G-XXXXXXXXXX" // TODO: replace with the real value from
-  // Firebase Console -> Project Settings -> General -> scroll to "Your apps" ->
-  // the web app's config snippet. Without the correct measurementId,
-  // Analytics silently does nothing (no error, just no data collected).
+  apiKey: "AIzaSyD-mVjKIp5rq7Mb56EHpSbIvryyqoyHrOM",
+  authDomain: "vaadiko.firebaseapp.com",
+  projectId: "vaadiko",
+  storageBucket: "vaadiko.firebasestorage.app",
+  messagingSenderId: "162108719007",
+  appId: "1:162108719007:web:87c49c9c1398ad4a7647aa",
+  measurementId: "G-HR8E2GK1NS"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -2549,7 +2546,7 @@ onAuthStateChanged(auth, async (user) => {
   }
 
   // Super Admin check
-  const SUPER_ADMIN_EMAIL = 'vaadplus100@gmail.com';
+  const SUPER_ADMIN_EMAIL = 'vaadiko100@gmail.com';
   if (user.email === SUPER_ADMIN_EMAIL) {
     document.getElementById('auth-screen').style.display = 'none';
     document.getElementById('super-admin-screen').style.display = 'flex';
@@ -2648,7 +2645,7 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 window.resetAllData = async () => {
-  if (auth.currentUser?.email !== 'vaadplus100@gmail.com') {
+  if (auth.currentUser?.email !== 'vaadiko100@gmail.com') {
     showToast('פעולה זו מוגבלת ל-Super Admin בלבד');
     return;
   }
@@ -2720,8 +2717,8 @@ window.confirmDeleteBuilding = async () => {
 };
 
 // ===== SUPER ADMIN =====
-const APP_VERSION = '2.18.0'; // *** תוספת חדשה, המשך ל-v2.17.4 *** — 4 שינויים במסכי כניסה/סופר-אדמין, לבקשת ירון: (1) מסך כניסה — שם האפליקציה "ועד בית פלוס" → "Vaadiko" (auth-title בלבד; לא נגעתי ב-<title>/meta/manifest.json/privacy.html/sw.js/תבניות קבלות PDF — אלה חלק מתהליך השינוי שם המלא שממתין לסיום תקופת ה-Closed Testing, ר' סיכום קודם); (2) כותרת המשנה "ניהול חכם לבניין שלך" → "העוזר האישי לחברי ועד הבית"; (3) הכפתור "▶️ סרטון הדרכה" → "▶️ סרטוני הדרכה" (רבים), עם קישור מעודכן ל-https://youtube.com/@vaadiko (במקום קישור סרטון בודד קודם); (4) מסך Super Admin — הוסרו שני כפתורי הפיתוח/בדיקה "🔧 מיגרציה חד-פעמית: residentEmails" ו-"🔒 נעילת Freemium (בדיקה)" מהתצוגה (הפונקציות runResidentEmailsMigration/toggleTestBuildingFreemiumLock עצמן נשארו בקוד ולא נמחקו, רק הכפתורים; refreshFreemiumLockStatus כבר מגינה על עצמה עם if(!statusEl||!btn) return אז לא זורקת שגיאה למרות שהאלמנטים כבר לא קיימים ב-DOM). לא נדרש AAB חדש — שינוי תצוגה בלבד, git push בלבד.
-const SUPER_ADMIN_EMAIL = 'vaadplus100@gmail.com';
+const APP_VERSION = '2.19.0'; // *** תוספת חדשה, המשך ל-v2.18.0 *** — מעבר ל-Firebase פרויקט חדש "vaadiko" + המשך תהליך שינוי השם ל-Vaadiko/ועדיקו, לבקשת ירון: (1) firebaseConfig המלא הוחלף לפרויקט Firebase החדש "vaadiko" (apiKey/authDomain/projectId/storageBucket/messagingSenderId/appId/measurementId) — הפרויקט הישן vaadplus-c0cc1 כבר לא בשימוש מגרסה זו ואילך; (2) SUPER_ADMIN_EMAIL עודכן בכל ארבעת המקומות בקוד (הקבוע המקומי בתוך onAuthStateChanged, הבדיקה המוטבעת ב-resetAllData, הקבוע הראשי ברמת המודול, הבדיקה המוטבעת ללחיצת אייקון הכתר בדף הבית) מ-vaadplus100@gmail.com ל-vaadiko100@gmail.com — חשבון Super Admin חדש ונפרד עבור פרויקט Firebase החדש; (3) שני קישורי mailto (מודל מדיניות הפרטיות + פולבק שדרוג פרימיום) עודכנו לאותה כתובת vaadiko100@gmail.com; (4) שינוי שם תצוגה בעברית — <title>, meta apple-mobile-web-app-title, טקסט הגוף במודל מדיניות הפרטיות, ושלוש תבניות קבלות ה-PDF (generateReceipt/generateMultiReceipt/generateCategoryGroupReceipt) עודכנו מ-"ועד בית פלוס" ל-"ועדיקו" — בכוונה נבחר השם העברי (לא "Vaadiko" הלועזי) עבור מסמכים/קבלות/דוחות רשמיים שכל שאר תוכנם עברית, הן מטעמי עקביות/רשמיות מול הדייר והן כדי להימנע מבעיות רינדור bidi ידועות של html2canvas בערבוב טקסט עברי/לועזי בתוך תבנית RTL (ראה תיעוד aptDisplay/descWithNoteHtml). מסך הכניסה (auth-title) נשאר "Vaadiko" הלועזי כפי שכבר עודכן ב-v2.18.0 — לא שונה בגרסה זו. עדיין לא בוצע בגרסה זו (ממתין להמשך): manifest.json, sw.js (נתיבי /vaadplus/ → /vaadiko/ ו-CACHE_NAME), privacy.html העצמאי, ו-functions/index.js (SUPER_ADMIN_EMAIL ב-Cloud Functions — ידחה עד שיוחלט לפרוס תשלומי פרימיום על vaadiko). ⚠️ קריטי: גרסה זו תלויה בכך שב-Firebase Console של vaadiko כבר בוצע — Firestore Database במצב Production, Authentication+Google מופעל, Authorized domain vaadiko.github.io נוסף, ו-Firestore+Storage Security Rules הודבקו ופורסמו עם isSuperAdmin()=='vaadiko100@gmail.com' (כל אלה אושרו ע"י ירון בסשן זה). לא נדרש AAB חדש — שינוי קוד בלבד, git push בלבד (אך ראה הערה: המעבר בין Firebase projects אינו רק "תצוגה" — אחרי git push לבניין הקיים בפרויקט vaadplus-c0cc1 לא תהיה גישה דרך גרסה זו של האפליקציה עד שיבוצע גיבוי/שחזור לפי המדריך).
+const SUPER_ADMIN_EMAIL = 'vaadiko100@gmail.com';
 const BETA_BUILDING_LIMIT = 50; // Stage 1: closed beta cap. Super Admin can override this in Settings without touching code.
 const TRIAL_DAYS = 30; // Default fallback if meta/settings.trialDays doesn't exist yet. Super Admin can override the effective value at runtime — see trialDaysSetting below.
 const MAX_CO_ADMINS_DEFAULT = 1; // Default fallback if meta/settings.maxCoAdmins doesn't exist yet — matches the original hardcoded "1 additional committee member" limit.
@@ -3510,7 +3507,7 @@ function initUI() {
   // כתר לחיץ ל-Super Admin בלבד; משתמש רגיל רואה רק אייקון בניין ניטרלי (בלי מראה כפתור)
   const buildingIcon = document.getElementById('home-building-icon');
   if (buildingIcon) {
-    if (auth.currentUser?.email === 'vaadplus100@gmail.com') {
+    if (auth.currentUser?.email === 'vaadiko100@gmail.com') {
       buildingIcon.innerHTML = '👑';
       buildingIcon.style.cursor = 'pointer';
       buildingIcon.style.background = 'rgba(255,255,255,0.15)';
@@ -6993,7 +6990,7 @@ window.generateCategoryGroupReceipt = async (key, share = false) => {
       <div class="header">
         <div class="logo-area">
           <div class="logo-icon">🏢</div>
-          <div><div class="logo-text">ועד בית פלוס</div><div class="logo-sub">${buildingAddress}</div></div>
+          <div><div class="logo-text">ועדיקו</div><div class="logo-sub">${buildingAddress}</div></div>
         </div>
         <div class="receipt-label">
           <div class="receipt-word">קבלה</div>
@@ -10898,7 +10895,7 @@ async function generateMultiReceipt(apt, name, monthsData, share = false) {
       <div class="header">
         <div class="logo-area">
           <div class="logo-icon">🏢</div>
-          <div><div class="logo-text">ועד בית פלוס</div><div class="logo-sub">${buildingAddress}</div></div>
+          <div><div class="logo-text">ועדיקו</div><div class="logo-sub">${buildingAddress}</div></div>
         </div>
         <div class="receipt-label">
           <div class="receipt-word">קבלה מרוכזת</div>
@@ -11137,7 +11134,7 @@ window.generateReceipt = async (apt, name, fee, ym, paymentId, share = false) =>
         <div class="logo-area">
           <div class="logo-icon">🏢</div>
           <div>
-            <div class="logo-text">ועד בית פלוס</div>
+            <div class="logo-text">ועדיקו</div>
             <div class="logo-sub">${buildingAddress}</div>
           </div>
         </div>
